@@ -8,12 +8,16 @@ function formatProfileResponse(user: {
   name: string
   email: string
   manufacturer: {
-    companyName: string
-    description: string | null
-    website: string | null
-    logoUrl: string | null
-  }
+      companyName: string
+      description: string | null
+      website: string | null
+      logoUrl: string | null
+    } | null
 }) {
+  if (!user.manufacturer) {
+    throw new Error('Manufacturer profile is missing')
+  }
+
   return {
     companyName: user.manufacturer.companyName,
     description: user.manufacturer.description,

@@ -7,6 +7,16 @@ interface SendMailOptions {
   text?: string
 }
 
+type MailTransporter = {
+  sendMail: (options: {
+    from?: string
+    to: string
+    subject: string
+    text?: string
+    html?: string
+  }) => Promise<unknown>
+}
+
 function isEmailEnabled() {
   return Boolean(
     process.env.SMTP_HOST &&
@@ -17,7 +27,7 @@ function isEmailEnabled() {
   )
 }
 
-let transporter: nodemailer.Transporter | null = null
+let transporter: MailTransporter | null = null
 
 function getTransporter() {
   if (!isEmailEnabled()) {
@@ -33,7 +43,7 @@ function getTransporter() {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASSWORD,
       },
-    })
+    }) as MailTransporter
   }
 
   return transporter

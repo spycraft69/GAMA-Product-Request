@@ -4,6 +4,13 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import { prisma } from './db'
 import bcrypt from 'bcryptjs'
 
+const ALLOWED_ROLES = ['NONPROFIT', 'EDUCATIONAL', 'MANUFACTURER'] as const
+type AllowedRole = typeof ALLOWED_ROLES[number]
+
+function normalizeRole(role: string): AllowedRole | null {
+  return (ALLOWED_ROLES as readonly string[]).includes(role) ? (role as AllowedRole) : null
+}
+
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -35,11 +42,17 @@ export const authOptions: NextAuthOptions = {
           return null
         }
 
+        const role = normalizeRole(user.role)
+        if (!role) {
+          console.warn(`User ${user.id} has unsupported role "${user.role}"`)
+          return null
+        }
+
         return {
           id: user.id,
           email: user.email,
           name: user.name,
-          role: user.role,
+          role,
         }
       }
     })
@@ -57,7 +70,9 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }) {
       if (session.user) {
         session.user.role = token.role as 'NONPROFIT' | 'EDUCATIONAL' | 'MANUFACTURER'
-        session.user.id = token.sub
+        if (typeof token.sub === 'string') {
+          session.user.id = token.sub
+        }
       }
       return session
     },
