@@ -39,12 +39,6 @@ export function Navbar() {
               >
                 Browse Publishers
               </Link>
-              <Link
-                href="/conventions"
-                className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 hover:text-primary-600"
-              >
-                Convention Schedule
-              </Link>
             </div>
           </div>
           <div className="flex items-center">
