@@ -6,7 +6,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            GAMA Free Product Requests
+            GAMA Sample Product Requests
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-primary-100">
             Browse tabletop products and request free demo copies shipped to your organization

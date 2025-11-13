@@ -4,8 +4,8 @@ import { Navbar } from '@/components/layouts/Navbar'
 import { AuthProvider } from '@/components/providers/AuthProvider'
 
 export const metadata: Metadata = {
-  title: 'GAMA Free Product Requests',
-  description: 'Connect non-profits and educational institutions with tabletop game publishers for free product demos',
+  title: 'GAMA Sample Product Requests',
+  description: 'Connect non-profits and educational institutions with tabletop game publishers for sample product demos',
 }
 
 export default function RootLayout({
