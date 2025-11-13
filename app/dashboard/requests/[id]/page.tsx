@@ -129,7 +129,7 @@ export default function RequestDetailsPage() {
       <div className="bg-white rounded-lg shadow-lg p-8">
         <div className="flex justify-between items-start mb-6">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Demo Request</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Sample Product Request</h1>
             <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(request.status)}`}>
               {request.status}
             </span>

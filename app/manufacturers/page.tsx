@@ -47,7 +47,7 @@ export default function ManufacturersPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">Tabletop Game Publishers</h1>
         <p className="mt-2 text-gray-600">
-          Browse publishers offering free demo copies for non-profits and educational institutions
+          Browse publishers offering sample products for non-profits and educational institutions
         </p>
       </div>
 

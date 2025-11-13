@@ -77,7 +77,7 @@ export default function PublishersPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Publishers</h1>
         <p className="text-gray-600 mb-6">
-          Browse publishers offering free tabletop game demos. Click any product below to request a copy.
+          Browse publishers offering sample tabletop products. Click any product below to request a copy.
         </p>
         <div className="max-w-md">
           <input

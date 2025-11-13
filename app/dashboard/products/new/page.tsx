@@ -271,7 +271,7 @@ export default function NewProductPage() {
                 onChange={(e) => setFormData({ ...formData, isAvailable: e.target.checked })}
                 className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
               />
-              <span className="ml-2 text-sm text-gray-700">Product is available for demo requests</span>
+              <span className="ml-2 text-sm text-gray-700">Product is available for sample product requests</span>
             </label>
           </div>
 

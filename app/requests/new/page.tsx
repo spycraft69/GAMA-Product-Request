@@ -104,7 +104,7 @@ export default function NewRequestPage() {
       </div>
 
       <div className="bg-white rounded-lg shadow-lg p-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6">Request a Demo</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">Request a Sample Product</h1>
 
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-6">

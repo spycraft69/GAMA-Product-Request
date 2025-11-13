@@ -16,7 +16,7 @@ interface Product {
   }
 }
 
-export default function RequestDemoPage() {
+export default function RequestSampleProductPage() {
   const params = useParams()
   const router = useRouter()
   const [product, setProduct] = useState<Product | null>(null)
@@ -150,7 +150,7 @@ export default function RequestDemoPage() {
             />
           )}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Request Demo: {product.name}</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Request Sample Product: {product.name}</h2>
             {product.genres && product.genres.length > 0 && (
               <div className="mb-2 flex flex-wrap gap-2">
                 {product.genres.map((genre) => (
@@ -181,7 +181,7 @@ export default function RequestDemoPage() {
       <div className="bg-white rounded-lg shadow-lg p-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">Request Form</h1>
         <p className="text-gray-600 mb-6">
-          Fill out the form below to request a free demo copy. The publisher will review your request and contact you.
+          Fill out the form below to request a sample product. The publisher will review your request and contact you.
         </p>
 
         {error && (
@@ -351,7 +351,7 @@ export default function RequestDemoPage() {
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
-              placeholder="Share details that will help the publisher understand your mission and how you plan to use the demo copy."
+              placeholder="Share details that will help the publisher understand your mission and how you plan to use the sample product."
             />
           </div>
 

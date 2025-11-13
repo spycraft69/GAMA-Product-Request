@@ -62,7 +62,7 @@ export default function ManufacturerDetailsPage() {
     )
   }
 
-  const canRequestDemo = session && 
+  const canRequestSampleProduct = session && 
     (session.user?.role === 'NONPROFIT' || session.user?.role === 'EDUCATIONAL')
 
   return (
@@ -118,12 +118,12 @@ export default function ManufacturerDetailsPage() {
           )}
         </div>
 
-        {canRequestDemo ? (
+        {canRequestSampleProduct ? (
           <Link
             href={`/requests/new?manufacturerId=${manufacturer.id}`}
             className="inline-block w-full sm:w-auto px-6 py-3 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition text-center font-semibold"
           >
-            Request a Demo
+            Request a Sample Product
           </Link>
         ) : !session ? (
           <div className="bg-blue-50 border border-blue-200 rounded-md p-4">
@@ -136,7 +136,7 @@ export default function ManufacturerDetailsPage() {
               <Link href="/register" className="font-semibold underline">
                 register
               </Link>{' '}
-              as a non-profit or educational institution to request a demo.
+              as a non-profit or educational institution to request a sample product.
             </p>
           </div>
         ) : null}

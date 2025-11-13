@@ -60,7 +60,7 @@ export default function ProductsPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Available Products</h1>
         <p className="text-gray-600 mb-6">
-          Browse available tabletop games and request free demo copies for your organization
+          Browse available tabletop games and request sample products for your organization
         </p>
         <div className="max-w-md">
           <input

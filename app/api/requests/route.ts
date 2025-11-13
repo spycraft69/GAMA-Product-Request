@@ -109,12 +109,12 @@ export async function POST(request: Request) {
 
     if (!product.isAvailable) {
       return NextResponse.json(
-        { error: 'Product is not available for demo requests' },
+        { error: 'Product is not available for sample product requests' },
         { status: 400 }
       )
     }
 
-    const demoRequest = await prisma.request.create({
+    const sampleProductRequest = await prisma.request.create({
       data: {
         productId,
         organizationName,
@@ -137,11 +137,11 @@ export async function POST(request: Request) {
 
     if (publisherEmail) {
       const productName = product.name
-      const subject = `New demo request for ${productName}`
-      const plainText = `A new demo request has been submitted for ${productName} by ${organizationName} (${organizationType}). Contact: ${contactName} (${contactEmail}).`
+      const subject = `New sample product request for ${productName}`
+      const plainText = `A new sample product request has been submitted for ${productName} by ${organizationName} (${organizationType}). Contact: ${contactName} (${contactEmail}).`
       const formattedMessage = message ? message.replace(/\n/g, '<br />') : ''
       const html = `
-        <h2>New Demo Request</h2>
+        <h2>New Sample Product Request</h2>
         <p><strong>Product:</strong> ${productName}</p>
         <p><strong>Organization:</strong> ${organizationName} (${organizationType})</p>
         <p><strong>Contact:</strong> ${contactName} &lt;${contactEmail}&gt;</p>
@@ -163,7 +163,7 @@ export async function POST(request: Request) {
       })
     }
 
-    return NextResponse.json(demoRequest)
+    return NextResponse.json(sampleProductRequest)
   } catch (error) {
     console.error('Error creating request:', error)
     return NextResponse.json(

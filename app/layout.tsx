@@ -5,7 +5,7 @@ import { AuthProvider } from '@/components/providers/AuthProvider'
 
 export const metadata: Metadata = {
   title: 'GAMA Sample Product Requests',
-  description: 'Connect non-profits and educational institutions with tabletop game publishers for sample product demos',
+  description: 'Connect non-profits and educational institutions with tabletop game publishers for sample products',
 }
 
 export default function RootLayout({
